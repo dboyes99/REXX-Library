@@ -24,6 +24,9 @@ fru_constants:
     VAL_NUM_NULL = 0           /* null number */
     VAL_true = 1               /* logical true */
     VAL_false = 0              /* logical false */
+    VAL_Yes = 'Y'              /* value Y */
+    VAL_No = 'N'               /* value N */
+    VAL_Maybe = 'M'            /* value M */
 /* useful states for comparison */
     DISK_RO = 'R/O'            /* disk is R/O */
     DISK_RW = 'R/W'            /* disk is R/W */
