@@ -9,7 +9,7 @@
 /*   pgm.options.x - stem containing options (after ')')                   */
 /***************************************************************************/
 /* Last Modified: 30 JUL 2022                                              */
-/*    30-JUL-2022 DEB Initial commit                                                                     */
+/*    30-JUL-2022 DEB Initial commit                                       */
 /*                                                                         */
 parse_argline:
 
@@ -34,4 +34,4 @@ parse_argline:
    end
 
 /* exit*/
-   return rc
+   return RC_OK
