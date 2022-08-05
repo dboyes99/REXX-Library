@@ -17,6 +17,8 @@ fru_constants:
     RC_MISSINGVALUE = 8        /* missing value */
     RC_DISKRO= 12              /* target disk is read/only */
     RC_NOSPACE = 16            /* disk is full */
+    RC_NOTWRITABLE = 16        /* disk not writable */
+    RC_NOTFOUND = 28           /* not found */
     RC_FILEEXISTS = 28         /* file exists */
     RC_OTHERERR = 999          /* some other unexplained error happened */
 /* frequently used constants */
