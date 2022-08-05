@@ -6,6 +6,8 @@
 /* Output:                                                                 */
 /*   None - vars set in program contextc                                   */
 /***************************************************************************/
+/* ATTN: CALL THIS AS EARLY IN PROGRAM AS POSSIBLE ATTN ATTN ATTN ATTN ATTN*/
+/***************************************************************************/
 /* Last Modified: 30 JUL 2022                                              */
 /*    30-JUL-2022 DEB Initial commit                                       */
 /*                                                                         */
