@@ -7,7 +7,7 @@
 /*   None - vars set in program contextc                                   */
 /***************************************************************************/
 /* Last Modified: 30 JUL 2022                                              */
-/*    30-JUL-2022 DEB Initial commit                                                                     */
+/*    30-JUL-2022 DEB Initial commit                                       */
 /*                                                                         */
 fru_constants:
 /* frequently used return codes */
@@ -16,10 +16,13 @@ fru_constants:
     RC_DISKRO= 12              /* target disk is read/only */
     RC_NOSPACE = 16            /* disk is full */
     RC_FILEEXISTS = 28         /* file exists */
-    RC_OTHERERR = 99           /* some other error happened */
+    RC_OTHERERR = 999          /* some other unexplained error happened */
 /* frequently used constants */
     VAL_CHAR_NULL = ''         /* null string */
     VAL_NUM_NULL = 0           /* null number */
+    VAL_true = 1               /* logical true */
+    VAL_false = 0              /* logical false */
+/* useful states for comparison */
     DISK_RO = 'R/O'            /* disk is R/O */
     DISK_RW = 'R/W'            /* disk is R/W */
     DISK_MDISK = 'MDISK'       /* disk is a minidisk */
