@@ -4,7 +4,7 @@
 /* Input:                                                                  */
 /*   None                                                                  */
 /* Output:                                                                 */
-/*   None - vars set in program contextc                                   */
+/*   None - vars set in program context                                    */
 /***************************************************************************/
 /* ATTN: CALL THIS AS EARLY IN PROGRAM AS POSSIBLE ATTN ATTN ATTN ATTN ATTN*/
 /***************************************************************************/
