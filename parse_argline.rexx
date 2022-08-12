@@ -24,14 +24,6 @@ parse_argline:
 
 /* parse argline */
    parse var argline pattern_parms '(' pattern_options ')'
-/* put parms in stem */
-   for x = 1 to words(pattern_parms) do
-      pgm.parameters.x = word(pattern_parms,x)
-   end
-/* put options in stem */
-   for x = 1 to words(pattern_options) do
-      pgm.options.x = word(pattern_options)
-   end
 
 /* exit*/
    return RC_OK

@@ -6,7 +6,7 @@
 /* Output:                                                                 */
 /*   None - vars set in program context                                    */
 /***************************************************************************/
-/* ATTN: CALL THIS AS EARLY IN PROGRAM AS POSSIBLE ATTN ATTN ATTN ATTN ATTN*/
+/* ATTN: CALL THIS FIRST OR AS EARLY IN PROGRAM AS POSSIBLE           ATTN */
 /***************************************************************************/
 /* Last Modified: 30 JUL 2022                                              */
 /*    30-JUL-2022 DEB Initial commit                                       */
@@ -14,6 +14,8 @@
 fru_constants:
 /* frequently used return codes */
     RC_OK = 0                  /* everything OK */
+    RC_WARN = 4                /* non-fatal error */
+    RX_NONFATAL=4              /* non-fatal error if it's easier explained */
     RC_MISSINGVALUE = 8        /* missing value */
     RC_DISKRO= 12              /* target disk is read/only */
     RC_NOSPACE = 16            /* disk is full */
@@ -21,6 +23,7 @@ fru_constants:
     RC_NOTFOUND = 28           /* not found */
     RC_FILEEXISTS = 28         /* file exists */
     RC_OTHERERR = 999          /* some other unexplained error happened */
+
 /* frequently used constants */
     VAL_CHAR_NULL = ''         /* null string */
     VAL_NUM_NULL = 0           /* null number */
@@ -29,10 +32,18 @@ fru_constants:
     VAL_Yes = 'Y'              /* value Y */
     VAL_No = 'N'               /* value N */
     VAL_Maybe = 'M'            /* value M */
+    VAL_NOTAPP '*NOTAPP'       /* not applicable */
+    VAL_ONOFF = 'ONOFF'        /* var is a switch        CHECK/NOCHECK    */
+    VAL_CMSFILE = 'CMSFILE'    /* var is a CMS file spec FILE(fn ft fm )  */
+    VAL_KWDVAL = 'KWDVAL'      /* var is a kwd/val       FORMAT(1)        */
+
 /* useful states for comparison */
     DISK_RO = 'R/O'            /* disk is R/O */
     DISK_RW = 'R/W'            /* disk is R/W */
     DISK_MDISK = 'MDISK'       /* disk is a minidisk */
     DISK_SFS = 'DIR'           /* disk is a SFS/BFS directory */
 
+ /* capability options */
+    have_SUPERSAY = VAL_true    /* capability present -- false if not     */
+ 
 return RC_OK 
