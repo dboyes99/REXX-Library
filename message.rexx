@@ -14,9 +14,9 @@ Message:
     parse arg message
     /* if null text, silently return */
     if message = '' then do 
-       rc = RX_NONFATAL
-       signal msg-exit-program-with-error
-       end
+        rc = RX_NONFATAL
+        signal msg-exit-program-with-error
+    end
     if have_SUPERSAY then do 
         noop /* for now */
         end
