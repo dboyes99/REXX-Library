@@ -1,12 +1,12 @@
 /* REXX */
 /*************************************************************/
 /* test_diskrw -  is a disk r/w?                             */
-/* EXECLIB Name: TDRW                                                          */
+/* EXECLIB Name: TDRW                                        */
 /* Input:                                                    */
 /*    disk.filemode - accessed disk filemode                 */
 /*                                                           */
 /* Output:                                                   */
-/*      disk.writable  - true/false                         */                             
+/*      disk.writable  - true/false                          */                             
 /*                                                           */
 /* Return Codes:                                             */
 /*      RC_OK - all well                                     */
@@ -27,6 +27,6 @@ test_diskrw:
     end
     parse var dataline . . . disk.status .
     if disk.status = DISK_RW then disk.writable = VAL_true
-    
+
 exit_test_diskrw_subroutine:
 return rc
