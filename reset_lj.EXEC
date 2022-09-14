@@ -1,0 +1,27 @@
+/*                                                                      
+|----------------------------------------------------------------------|
+|                                                                      |
+|                    Toronto Transit Commission                        |
+|                                                                      |
+|        This program is intended to send a reset sequence to          |
+|        a printer to clear any settings left over from                |
+|        another print job.                                            |
+|                                                                      |
+|        Written by Peter Webb, June 29, 2022.                         |
+|                                                                      |
+|----------------------------------------------------------------------|
+*/    
+reset_laserjet_pcl_printer:                                                                  
+    address COMMAND                                                         
+    parse upper arg printer_name .                                          
+    escape = '27'x                                                          
+    'PIPE',                                                                 
+        'literal' escape || '%-12345X@PJL SET PAGEPROTECT=OFF @PJL SET',     
+        'RESOLUTION=600 @PJL ENTER LANGUAGE=PCL',                         
+        '| append literal' escape || 'E',                                    
+        '| append literal Reset printer to default settings.',               
+        '| append literal' escape || '%-12345X',                             
+        '| > SIMPLEX DATA A'                         
+    'EXEC PPS SIMPLEX DATA A (PRINTER' printer_name 
+    'ERASE SIMPLEX DATA A'                          
+return rc                                            
