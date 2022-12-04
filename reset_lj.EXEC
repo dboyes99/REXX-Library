@@ -3,7 +3,7 @@
 |                                                                      |
 |                    Toronto Transit Commission                        |
 |                                                                      |
-|        This program is intended to send a reset sequence to          |
+|        This routine is intended to send a reset sequence to          |
 |        a printer to clear any settings left over from                |
 |        another print job.                                            |
 |                                                                      |
