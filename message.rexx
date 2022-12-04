@@ -11,14 +11,45 @@
 /*    30-JUL-2022 DEB Initial commit                                       */
 /***************************************************************************/
 Message: 
-    parse arg message
+    parse arg message sev
+
     /* if null text, silently return */
     if message = '' then do 
         rc = RX_NONFATAL
         signal msg-exit-program-with-error
     end
+
+    /* check validity of msgtype */
+    upper sev
+    if pos(sev, VAL_MSGSEV) = 0 then do
+        say 'Invalid message severity -- correct code and rerun'
+        exit RX_OTHERERR
+    end 
+
+    /* deal with message types if SUPERSAY present */ 
     if have_SUPERSAY then do 
-        noop /* for now */
+        select
+            when sev = 'NORM' then do       /* plain green unhighlighted text */
+                noop
+            end
+            when sev = 'WARN' then do       /* blue text */
+                noop
+            end
+            when sev = 'ERR' then do        /* yellow text */
+                noop
+            end
+            when sev = 'SEVERR' then do     /* yellow blinking text */
+                noop
+            end
+            when sev = 'CRITERR' then do    /* red text */
+                noop
+            end
+            when sev = 'FATALERR' then do   /* red blinking text */
+                noop
+            end
+            otherwise do
+                noop
+            end
         end
     else do
         say message

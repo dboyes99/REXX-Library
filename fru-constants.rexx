@@ -10,6 +10,8 @@
 /***************************************************************************/
 /* Last Modified: 30 JUL 2022                                              */
 /*    30-JUL-2022 DEB Initial commit                                       */
+/*    04-DEC-2022 DEB Add message states array for expansion of Message:   */
+/*                    functions                                            */
 /*                                                                         */
 fru_constants:
 /* frequently used return codes */
@@ -43,7 +45,15 @@ fru_constants:
     DISK_MDISK = 'MDISK'       /* disk is a minidisk */
     DISK_SFS = 'DIR'           /* disk is a SFS/BFS directory */
 
+/* valid message states */
+    VAL_MSGSEV = 'NORM' ,       /* normal text */
+                'WARN' ,        /* warning text */
+                'ERR' ,         /* error text */
+                'SEVERR' ,      /* severe error text */
+                'CRITERR' ,     /* critical error text */
+                'FATALERR'      /* fatal error text */
+
  /* capability options */
-    have_SUPERSAY = VAL_true    /* capability present -- false if not     */
+    have_SUPERSAY = VAL_true    /* capability present -- set to false if not */
  
 return RC_OK 
