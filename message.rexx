@@ -3,6 +3,7 @@
 /* EXECLIB Name: USERMSG                                                   */
 /* Input:                                                                  */
 /*   text - Message to be displayed                                        */
+/*   sev  - message severity                                               */
 /* Output:                                                                 */
 /*   message is typed on console                                           */
 /***************************************************************************/
