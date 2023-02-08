@@ -17,7 +17,7 @@ fru_constants:
 /* frequently used return codes */
     RC_OK = 0                  /* everything OK */
     RC_WARN = 4                /* non-fatal error */
-    RX_NONFATAL=4              /* non-fatal error if it's easier explained */
+    RC_NONFATAL=4              /* non-fatal error if it's easier explained */
     RC_MISSINGVALUE = 8        /* missing value */
     RC_DISKRO= 12              /* target disk is read/only */
     RC_NOSPACE = 16            /* disk is full */
