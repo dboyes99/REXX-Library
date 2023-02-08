@@ -30,7 +30,7 @@ Message:
     /* deal with message types if SUPERSAY present */ 
     if have_SUPERSAY then do 
         select
-            when sev = 'NORM' then do       /* plain green unhighlighted text */
+            when sev = 'NORM' then do       /* green unhighlighted text */
                 noop
             end
             when sev = 'WARN' then do       /* blue text */
@@ -52,7 +52,7 @@ Message:
                 noop
             end
         end
-    else do
+    else do /* if no SUPERSAY */
         say message
         rc = RC_OK
         signal msg-exit-program
