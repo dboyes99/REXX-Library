@@ -30,7 +30,7 @@ fru_constants:
     VAL_CHAR_NULL = ''         /* null string */
     VAL_NUM_NULL = 0           /* null number */
     VAL_true = 1               /* logical true */
-    VAL_True = 1                /* alternate spelling */
+    VAL_True = 1               /* alternate spelling */
     VAL_false = 0              /* logical false */
     VAL_False = 0              /* alternate spelling */
     VAL_Yes = 'Y'              /* value Y */
