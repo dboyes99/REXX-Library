@@ -57,5 +57,5 @@ fru_constants:
 
  /* capability options */
     have_SUPERSAY = VAL_true    /* capability present -- set to false if not */
- 
-return RC_OK 
+
+return RC_OK                    /* This routine is always successful */
