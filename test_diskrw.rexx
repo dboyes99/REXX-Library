@@ -16,7 +16,6 @@
 /*      fru_constants (must be called before use)            */
 /*************************************************************/
 test_diskrw:
-
     disk.writable = VAL_false
     'PIPE CMS QUERY DISK' disk.filemode 
         '| DROP 1', 
@@ -27,6 +26,5 @@ test_diskrw:
     end
     parse var dataline . . . disk.status .
     if disk.status = DISK_RW then disk.writable = VAL_true
-
 exit_test_diskrw_subroutine:
-return rc
+    return rc
