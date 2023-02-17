@@ -1,6 +1,6 @@
 /***************************************************************************/
 /* fru_constants - set frequently used constants                           */
-/* EXECLIB Name: FRUCONST                                                  */
+/* EXECLIB Name: FRCONST                                                  */
 /* Input:                                                                  */
 /*   None                                                                  */
 /* Output:                                                                 */
@@ -13,7 +13,7 @@
 /*    04-DEC-2022 DEB Add message states array for expansion of Message:   */
 /*                    functions                                            */
 /*                                                                         */
-fru_constants:
+LIB_fru_constants:
 /* frequently used return codes */
     RC_OK = 0                  /* everything OK */
     RC_WARN = 4                /* non-fatal error */

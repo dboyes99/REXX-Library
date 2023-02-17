@@ -1,0 +1,4 @@
+/* Standard end program */
+LIB_end_program:
+   exit rc
+   

@@ -11,7 +11,7 @@
 /* Last Modified: 30 JUL 2022                                              */
 /*    30-JUL-2022 DEB Initial commit                                       */
 /*                                                                         */
-parse_argline:
+LIB_parse_argline:
 
 /* initialize output variables */
    pgm.execname = ''    /* null string */ 
