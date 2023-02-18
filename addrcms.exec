@@ -1,0 +1,6 @@
+/*********************************************************************/ 
+/* Address_CMS:                         - command context is CMS     */ 
+/*********************************************************************/ 
+ address CMS                          /* CMS from here, baby         */ 
+ rc = RX_OK                           /* success                     */ 
+return rc                             /* end routine                 */ 

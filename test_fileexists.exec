@@ -20,7 +20,7 @@
 /*      fru_constants (must be called before use)          */
 /*      message                                            */
 /***********************************************************/
-test_fileexists:
+LIB_test_fileexists:
     
     /* validate input parms */
     

@@ -54,8 +54,10 @@ return rc
 
 /* register dir in dirspec table */
 LIB_Register_Dir_Entry:
-    arg index 
+    arg index fp path
     call LIB_Identify_My_Default_FP
+    dirspec.index.filepool = fp
+    dirspec.index.path = path
     if dirspec.index.filepool = '' then dirspec.index.filepool = default_FP
     if dirspec.index.path = '' then dirspec.index.path = userid() || '.' 
     dirspec.index.fullpath = dirspec.index.filepool || dirspec.inde.path
