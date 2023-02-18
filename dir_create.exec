@@ -1,0 +1,13 @@
+/*********************************************************************/  
+/**** DIR_Create                      2021-03-13        DIRCREAT  ****/  
+/*********************************************************************/  
+/* Purpose: Create Directory                                         */  
+/* Input  : dirspec - what directory spec to create                  */  
+/* Output :                                                          */  
+/*                                                                   */  
+/*********************************************************************/  
+LIB_DIR_Create:                                                              
+  arg dirspec                         /* get dir to create           */  
+  'CREATE DIR' dirspec                /* create it                   */  
+return rc                             /* end routine                 */  
+                                                                         

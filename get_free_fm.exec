@@ -1,0 +1,16 @@
+/*********************************************************************/   
+/**** Get_Free_Filemode               2021-03-13        UTLGFFM   ****/   
+/*********************************************************************/   
+/* Purpose: Get a Free Filemode Letter                               */   
+/* Input  : None                                                     */   
+/* Output : None                                                     */   
+/*                                                                   */   
+/*********************************************************************/   
+Get_Free_Filemode:                                                        
+  'MAKEBUF'                           /* don't clobber stack         */   
+  'GETFMADR'                          /* get a free fm               */   
+  parse pull . free_fm . .            /* get from stack              */   
+  'DROPBUF'                           /* cleanup                     */   
+return free_fm                        /* end routine                 */   
+                                                                          
+                                                                          

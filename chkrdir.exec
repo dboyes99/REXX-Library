@@ -1,0 +1,21 @@
+/*********************************************************************/ 
+/**** Check_Required_Dir              2021-03-03        CHKRDIR   ****/ 
+/*********************************************************************/ 
+/* Purpose: Check for required dir                                   */ 
+/* Input  : dirspec  - dir to be located                             */ 
+/* Output : RC_OK/RC_NOTFOUND                                        */ 
+/*                                                                   */ 
+/*********************************************************************/ 
+Check_Required_Dir:                                                     
+ arg dirspec                          /* get dir  to look for        */ 
+ call Silence_Output                  /* silence please              */ 
+ 'LISTDIR' dirspec                    /* is it on any accessed disk  */ 
+ src = rc                             /* save rc                     */ 
+ call Resume_Output                   /* resume output               */ 
+ if src = RC_NOTFOUND then do         /* not found                   */ 
+   return RC_NOTFOUND                 /* function returns RC_NOTFOUND*/ 
+   end                                /* if RC_NOTFOUND              */ 
+ else do                              /* found                       */ 
+   return RC_OK                       /* function returns RC_OK      */ 
+   end                                /* either found or not         */ 
+                                                                        

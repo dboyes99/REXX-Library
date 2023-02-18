@@ -1,0 +1,15 @@
+/*********************************************************************/ 
+/**** Set_Variable_Defaults           2021-02-15        UTLSVARD  ****/ 
+/*********************************************************************/ 
+/* Purpose: Initialize program variables to default values           */ 
+/* Input  : None                                                     */ 
+/* Output : None                                                     */ 
+/*********************************************************************/ 
+LIB_Set_Variable_Defaults:                                                  
+                                                                        
+  Have_SUPERSAY =  VAL_True           /* is SUPERSAY available?      */ 
+                                      /* 1=yes, 0=no                 */ 
+                                                                        
+                                                                        
+return RC_OK                          /* routine exit                */ 
+                                                                        
