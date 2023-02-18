@@ -1,11 +1,11 @@
 /*********************************************************************/ 
-/* Address_CMD                        2021-03-10           UTLADCMD  */ 
+/* LIB_Address_CMD                    2021-03-10           UTLADCMD  */ 
 /*********************************************************************/ 
 /* Purpose: Change command interpretation to COMMAND interpreter     */ 
 /* Input  : None                                                     */ 
 /* Output : None                                                     */ 
 /*                                                                   */ 
 /*********************************************************************/ 
-Address_CMD:                                                         */ 
+LIB_Address_CMD:                                                         */ 
      address COMMAND                  /* change context to COMMAND   */ 
 return RX_OK                          /* end routine                 */ 
