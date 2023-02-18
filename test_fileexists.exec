@@ -4,12 +4,18 @@
 /* EXECLIB Name: TFEX                                      */
 /*                                                         */
 /* Input:                                                  */
-/*      file.name - obvious                                */
-/*      file.type - obvious                                */
-/*      file.mode - obvious                                */
+/*      file.index.name - obvious                          */
+/*      file.index.type - obvious                          */
+/*      file.index.mode - obvious                          */
 /*                                                         */
 /* Output:                                                 */
-/*      file.exists - true/false                           */
+/*      file.index.recfm                                   */
+/*      file.index.lrecl                                   */
+/*      file.index.numrecords                              */
+/*      file.index.numblocks                               */
+/*      file.index.date                                    */
+/*      file.index.time                                    */
+/*      file.index.exists - true/false                     */
 /*                                                         */
 /* Return Codes:                                           */
 /*      RC_OK = all well                                   */
@@ -21,33 +27,46 @@
 /*      message                                            */
 /***********************************************************/
 LIB_test_fileexists:
-    
+    arg index
     /* validate input parms */
     
-    if file.name = VAL_CHAR_NULL then do
+    if file.index.name = VAL_CHAR_NULL then do
         message = "File name missing - can't continue"
         call message "RED"
         rc = RC_OTHERERR
         signal exit_test_fileexists_routine
     end
-    if file.type = VAL_CHAR_NULL then do
+    if file.index.type = VAL_CHAR_NULL then do
         message = "File type missing - can't continue"
         call message "RED"
         rc = RC_OTHERERR
         signal exit_test_fileexists_routine
     end
-    if file.mode = VAL_CHAR_NULL then do
+    if file.index.mode = VAL_CHAR_NULL then do
         message = "File mode missing - assuming A"
         call message "YELLOW"
         rc = RC_WARN
         signal exit_test_fileexists_routine
     end
     
+    file.index.filespec = file.index.name file.index.type file.index.mode
     /* test for file */
-    file.exists = VAL_No
-    'ESTATE' file.spec
-    if rc = RC_OK then file.exists = VAL_true
+    file.index.exists = VAL_No
+    'ESTATE' file.index.filespec
+    if rc = RC_OK then do
+        file.index.exists = VAL_true
 
+        /* populate other info on file */
+
+        'PIPE CMS LISTFILE' file.index.filespec ' ( FULLDATE' ,
+              '| DROP 1' ,
+              '| SPECS WORD 4-9' ,
+              '| VAR filedata'
+
+        parse var filedata file.index.recfm file.index.lrecl ,
+            file.index.numrecords file.index.numblocks ,
+            file.index.date file.index.time
+    end
     exit_test_fileexists_routine:
     return rc
     

@@ -1,0 +1,12 @@
+/* LIB_register_file - files of interest */
+/* EXECLIB: REGFILE  */
+LIB_Register_File:
+  arg index filespec
+
+  file.index.name = word(filespec,1)
+  file.inde.type = word(filespec,2)
+  file.index.mode = word(filespec,3)
+
+  call LIB_Refresh_File_Data index
+
+return rc

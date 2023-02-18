@@ -1,0 +1,19 @@
+/*******************************************************/
+/* LIB_refresh_file_data                               */
+/* EXECLIB: UPDFILD                                    */
+/*******************************************************/
+
+LIB_Refresh_File_Data:
+    arg index
+
+    'PIPE CMS LISTFILE' file.index.filespec '( FULLDATE' ,
+          '| DROP 1' ,
+          '| SPECS WORD 1-9' ,
+          '| VAR filedata'
+    
+    parse var filedata file.index.name file.index.type ,
+        file.index.mode file.index.recfm file.index.lrecl ,
+        file.index.numrecords file.index.numblocks ,
+        file.index.date file.index.time
+
+return rc
