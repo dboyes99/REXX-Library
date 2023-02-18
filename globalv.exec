@@ -1,5 +1,7 @@
-/* globalv functions */
-/* GLBVAR *
+/***********************************************************************/
+/* GLOBALV Functions                                                   */
+/* Execlib: GLBVAR                                                     */
+/***********************************************************************/
 
 /* Init GLOBALV */
 
@@ -144,7 +146,7 @@ return src
 
 /* set globalv permanently */
 
-LIB_Set_GLOBALV_Var_Permanently:
+LIB_Set_GLOBALV_Var_Permanent:
     arg variable
     'GLOBALV PUTP' variable
     src = rc
@@ -153,4 +155,6 @@ return src
 /* This group of functions does not include STACK or STACKR */
 /* as they apply only to EXEC1/EXEC2, not modern REXX       */
 
-/* End GLOBALV Functions */
+/*************************************************************************/
+/* End GLOBALV Functions                                                 */
+/*************************************************************************/

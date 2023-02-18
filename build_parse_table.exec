@@ -19,7 +19,7 @@
 /* Last Modified: 08 AUG 2022                                              */
 /*    08-AUG-2022 DEB Initial commit                                       */
 /***************************************************************************/
-BUILD_PARSE_TABLE:
+LIB_Build_Parse_Table:
 
 BPT_Main: 
     call fru_constants                 /* establish standard constants     */
