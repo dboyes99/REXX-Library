@@ -11,7 +11,7 @@
 /* Last Modified: 30 JUL 2022                                              */
 /*    30-JUL-2022 DEB Initial commit                                       */
 /***************************************************************************/
-Message: 
+LIB_Message: 
     parse arg message sev
 
     /* if null text, silently return */
