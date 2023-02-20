@@ -1,6 +1,7 @@
 /*********************************************************************/
-Address_Xedit:                        /* command context is XEDIT    */
+/* Address_Xedit:      Set command context to XEDIT         UTLADXED */
 /*********************************************************************/
+Address_Xedit:
  address XEDIT                        /* XEDIT from here, baby       */
  rc = RX_OK                           /* success                     */
 return rc                             /* end routine                 */

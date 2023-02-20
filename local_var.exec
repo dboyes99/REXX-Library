@@ -1,3 +1,4 @@
+*COPY LOCVARS
 /**************************************************************************/
 /* Declare and initi8alize local vars section                             */
 /* EXECLib: LOCVARS                                                       */

@@ -1,6 +1,7 @@
+*COPY UTLSARG
 /***********************************************************************/
 /*** LIB_save_argline - copy argline into REXX var argline           ***/
-/*** Execlib: SAVEARG                                                ***/
+/*** Execlib: UTLSARG                                                ***/
 /***********************************************************************/
 
 LIB_Save_Argline:

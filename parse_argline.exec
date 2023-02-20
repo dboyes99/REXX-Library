@@ -1,6 +1,7 @@
+*COPY UTLPAAR
 /***************************************************************************/
 /* parse_argline - separate argline into parameters and options            */
-/* EXECLIB Name: PRSARGL                                                   */
+/* EXECLIB Name: UTLPAAR                                                   */
 /* Input:                                                                  */
 /*   argline - argline to be parsed                                        */
 /* Output:                                                                 */

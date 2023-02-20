@@ -1,3 +1,4 @@
+*COPY REGFILE
 /* LIB_register_file - files of interest */
 /* EXECLIB: REGFILE  */
 LIB_Register_File:

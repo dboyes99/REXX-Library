@@ -1,3 +1,4 @@
+*COPY UTLGFFM
 /*********************************************************************/   
 /**** Get_Free_Filemode               2021-03-13        UTLGFFM   ****/   
 /*********************************************************************/   
@@ -6,7 +7,7 @@
 /* Output : None                                                     */   
 /*                                                                   */   
 /*********************************************************************/   
-Get_Free_Filemode:                                                        
+LIB_Get_Free_Filemode:                                                        
   'MAKEBUF'                           /* don't clobber stack         */   
   'GETFMADR'                          /* get a free fm               */   
   parse pull . free_fm . .            /* get from stack              */   

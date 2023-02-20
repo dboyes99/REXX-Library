@@ -1,7 +1,7 @@
-/* REXX */
+*COPY TSTFEXT
 /***********************************************************/
 /* test_fileexists - does file exist?                      */
-/* EXECLIB Name: TFEX                                      */
+/* EXECLIB Name: TSTFEXT                                   */
 /*                                                         */
 /* Input:                                                  */
 /*      file.index.name - obvious                          */

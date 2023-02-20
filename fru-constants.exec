@@ -1,3 +1,4 @@
+*COPY FRCONST
 /***************************************************************************/
 /* fru_constants - set frequently used constants                           */
 /* EXECLIB Name: FRCONST                                                  */
