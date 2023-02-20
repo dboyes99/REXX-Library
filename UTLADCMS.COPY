@@ -1,6 +1,6 @@
 *COPY UTLADCMS
 /*********************************************************************/
-/*  Address_CMS:           - command context is CMS       UTLADCMS   */ 
+/*  Address_CMS            - command context is CMS       UTLADCMS   */ 
 /*********************************************************************/ 
 Address_CMS:
      address CMS                      /* CMS from here, baby         */ 
