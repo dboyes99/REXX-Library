@@ -3,3 +3,7 @@
 /* Declare and initialize local vars section                              */
 /* EXECLib: LOCVARS                                                       */
 /**************************************************************************/
+
+/* no content in template */
+    
+return RC_OK

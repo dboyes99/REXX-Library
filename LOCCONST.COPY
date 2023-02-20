@@ -1,6 +1,11 @@
 *COPY LOCCONST
 /**************************************************************************/
-/* Declare and initi8alize local constants section                             */
-/* EXECLib: LOCCONST                                                       */
+/* Declare and initialize local constants section                         */
+/* EXECLib: LOCCONST                                                      */
 /**************************************************************************/
- 
+/* Program Specific Constants                                             */
+/**************************************************************************/
+pgm.version = '1'                    /* edit to reflect actual VRM        */
+pgm.release = '1'
+pgm.modlevel = '0'
+pgm.applid = 'SPG'                   /* application id for XMITMSG        */
