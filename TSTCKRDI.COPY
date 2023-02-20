@@ -1,4 +1,4 @@
-*COPY CHKRDIR
+*COPY TSTCKRDI
 /*********************************************************************/ 
 /**** Check_Required_Dir              2021-03-03        TSTCKRDI  ****/ 
 /*********************************************************************/ 
@@ -7,7 +7,7 @@
 /* Output : RC_OK/RC_NOTFOUND                                        */ 
 /*                                                                   */ 
 /*********************************************************************/ 
-Check_Required_Dir:                                                     
+LIB_Check_Required_Dir:                                                     
  arg dirspec                          /* get dir  to look for        */ 
  call Silence_Output                  /* silence please              */ 
  'LISTDIR' dirspec                    /* is it on any accessed disk  */ 

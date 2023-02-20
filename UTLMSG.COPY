@@ -1,6 +1,7 @@
+*COPY UTLMSG
 /***************************************************************************/
 /* Message - type message to user                                          */
-/* EXECLIB Name: USERMSG                                                   */
+/* EXECLIB Name: UTLMSG                                                   */
 /* Input:                                                                  */
 /*   text - Message to be displayed                                        */
 /*   sev  - message severity                                               */
