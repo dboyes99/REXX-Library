@@ -1,0 +1,13 @@
+/*********************************************************************/ 
+/* LIB_Display_Msg_With_Subs:        2023-02-20           UTLRMWS   */ 
+/*********************************************************************/ 
+/* Purpose: Display Message with Substitution                  */ 
+/* Input  : message number and Substitution var names                */ 
+/* Output : message nnnn in stem message.x                           */ 
+/*                                                                   */ 
+/*********************************************************************/ 
+LIB_Display_Msg_With_Subs:         
+    arg applid msgnum subvars
+    'XMITMSG' msgnum subvars '( APPLID' pgm.applid 'VAR COMPRESS DISPLAY'
+    src = rc
+return src

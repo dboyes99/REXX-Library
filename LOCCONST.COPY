@@ -5,7 +5,7 @@
 /**************************************************************************/
 /* Program Specific Constants                                             */
 /**************************************************************************/
-pgm.version = '1'                    /* edit to reflect actual VRM        */
-pgm.release = '1'
-pgm.modlevel = '0'
-pgm.applid = 'SPG'                   /* application id for XMITMSG        */
+pgm.version = 'n'                    /* edit to reflect actual VRM        */
+pgm.release = 'n'
+pgm.modlevel = 'n'
+pgm.applid = 'XXX'                   /* application id for XMITMSG        */
