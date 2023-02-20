@@ -1,6 +1,6 @@
 *COPY CHKRDIR
 /*********************************************************************/ 
-/**** Check_Required_Dir              2021-03-03        CHKRDIR   ****/ 
+/**** Check_Required_Dir              2021-03-03        TSTCKRDI  ****/ 
 /*********************************************************************/ 
 /* Purpose: Check for required dir                                   */ 
 /* Input  : dirspec  - dir to be located                             */ 

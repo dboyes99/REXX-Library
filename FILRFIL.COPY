@@ -1,6 +1,6 @@
-*COPY REGFILE
+*COPY FILRFIL
 /* LIB_register_file - files of interest */
-/* EXECLIB: REGFILE  */
+/* EXECLIB: FILRFIL  */
 LIB_Register_File:
   arg index filespec
 

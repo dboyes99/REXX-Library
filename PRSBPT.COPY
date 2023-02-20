@@ -1,6 +1,7 @@
+*COPY PRSBPT
 /***************************************************************************/
 /* build_parse_table - build expected parse table for options              */
-/* EXECLIB Name: BLDPRTA                                                   */
+/* EXECLIB Name: PRSBPT                                                  */
 /* Usage: call BUILD_PARSE_TABLE parm-name type-of-parm  nargs neg var     */
 /* Input:                                                                  */
 /*  parse_table.0 = entries in parse_table                                 */

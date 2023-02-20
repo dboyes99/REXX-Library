@@ -1,7 +1,7 @@
-*COPY UPDFILD
+*COPY FILRFFD
 /*******************************************************/
 /* LIB_refresh_file_data                               */
-/* EXECLIB: UPDFILD                                    */
+/* EXECLIB: FILRFFD                                    */
 /*******************************************************/
 
 LIB_Refresh_File_Data:

@@ -1,6 +1,7 @@
+*COPY PRSRPSE
 /***************************************************************************/
 /* refine_parse - validate parse against template                          */
-/* EXECLIB Name: REFPRSE                                                   */
+/* EXECLIB Name: PRSRPSE                                                   */
 /* Input:                                                                  */
 /*  pattern_parms - parsed string from parse_argline                       */
 /*  pattern_options - parsed string from parse_argline                     */

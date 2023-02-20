@@ -1,7 +1,7 @@
 *COPY TSTDRW
 /*************************************************************/
 /* test_diskrw -  is a disk r/w?                             */
-/* EXECLIB Name: TDRW                                        */
+/* EXECLIB Name: TSTDRW                                      */
 /* Input:                                                    */
 /*    disk.filemode - accessed disk filemode                 */
 /*                                                           */
