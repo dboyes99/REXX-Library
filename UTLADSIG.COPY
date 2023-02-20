@@ -1,0 +1,45 @@
+/*********************************************************************/   
+/**** LIB_Signals                   2021-03-13        UTLADSIG    ****/   
+/*********************************************************************/   
+/* Purpose: Arm/disarm novalue and syntax err handlers               */   
+/* Input  : None                                                     */   
+/* Output : None                                                     */   
+/*                                                                   */   
+/*********************************************************************/ 
+
+LIB_Arn_Syntax:
+    signal on syntax
+return RC_OK
+
+LIB_Arm_NoValue: 
+    signal on NoValue name LIB_Arm_NoValue_Action
+return rc 
+
+LIB_Disarm_Syntax:
+    signal off syntax
+return RC_OK
+
+LIB_Disarm_NoValue:
+    signal off NoValue
+return RC_OK 
+
+LIB_Arm_NoValue_Action:
+    call LIB_Disarm_NoValue
+    badline = sigl                     
+    varname = condition('D')           
+    sourcel = LIB_Get_SourceLine(badline)   
+    msg = 'NOVALUE of "'varname'"' 
+return RC_OK   
+
+LIB_Get_Sourceline:
+   arg l                                                
+   line = ''                                            
+   do forever                                           
+      temp = sourceline(l)                              
+      line = line temp                                  
+      if right(strip(temp), 2) = '5C61'x then           
+      if index(temp, '615C'x) > 0 then                  
+      parse var temp temp '615C'x                       
+      if right(strip(temp), 1) <> ',' then return line  
+      l = l + 1                                         
+   end                                                  

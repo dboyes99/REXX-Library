@@ -1,5 +1,5 @@
 /*********************************************************************/ 
-/* LIB_Format_Msg_With_Subs:        2023-02-20           UTLRMWS   */ 
+/* LIB_Format_Msg_With_Subs:        2023-02-20           UTLFMSG     */ 
 /*********************************************************************/ 
 /* Purpose: Retrieve Message Text with Substitution                  */ 
 /* Input  : message number and Substitution var names                */ 
