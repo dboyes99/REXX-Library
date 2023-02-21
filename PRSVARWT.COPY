@@ -1,0 +1,28 @@
+*COPY PRSVARWT 
+/**********************************************************************/
+/* PRSE_Parse_Var_With_Parser_Table                                   */
+/* EXECLIB Name: PRSVARWT                                             */
+/* Input:                                                             */
+/*   applid of parse table                                            */
+/*                                                                    */
+/* Output: (if successful)                                            */
+/*   token.0 = num of parsed tokens                                   */
+/*   token.x = stem containing parsed token values                    */
+/*   code.0  = number of token types                                  */
+/*   code.x  = stem containing token types                            */
+/*                                                                    */
+/* Depends on:                                                        */
+/*  FRCONST                                                           */
+/**********************************************************************/
+PRSE_Parse_Var_With_Parser_Table:
+    arg applid uniqueid cmdline
+    'PARSECMD' uniqueid '( TRANSLSAME NOTYPE APPLID' applid ,
+              'STRING' cmdline
+    src = rc
+    if src = RC_OK then do
+        return RC_OK
+        end
+    else do
+        return RC_PARSEERR
+        end
+/* end of routine */

@@ -1,0 +1,24 @@
+*COPY PRSDEPT 
+/**********************************************************************/
+/* PRSE_Dectivate_Parser_Table                                        */
+/* EXECLIB Name: PRSDEPT                                              */
+/* Input:                                                             */
+/*   applid of parse table                                            */
+/*                                                                    */
+/* Output:                                                            */
+/*   None                                                             */
+/*                                                                    */
+/* Depends on:                                                        */
+/*  FRCONST                                                           */
+/**********************************************************************/
+PRSE_Deactivate_Parser_Table:
+    arg applid
+    'SET LANGUAGE ( DELETE ' applid 'USER'
+    src = rc
+    if src = RC_OK then do
+        return RC_OK
+        end
+    else do
+        return RC_OTHERERR
+        end
+/* end of routine */
