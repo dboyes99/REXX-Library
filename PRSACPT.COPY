@@ -1,0 +1,28 @@
+*COPY PRSACPT 
+/**********************************************************************/
+/* PRSE_Activate_Parser_Table                                         */
+/* EXECLIB Name: PRSLDPAR                                             */
+/* Input:                                                             */
+/*   applid of parse table                                            */
+/*                                                                    */
+/* Output:                                                            */
+/*   None                                                             */
+/*                                                                    */
+/* Depends on:                                                        */
+/*  FRCONST                                                           */
+/*  FILRFIL                                                           */
+/*  TSTFEXT                                                           */
+/**********************************************************************/
+PRSE_Activate_Parser_Table:
+    arg applid
+    'SET LANGUAGE ( ADD' applid 'USER'
+    src = rc
+    if src = RC_OK then do
+        return RC_OK
+        end
+    else do
+        return RC_OTHERERR
+        end
+/* end of routine */
+    
+    

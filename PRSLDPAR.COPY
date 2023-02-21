@@ -1,0 +1,32 @@
+*COPY PRSLDPAR 
+/**********************************************************************/
+/* PRSE_Find_Parser_Table                                             */
+/* EXECLIB Name: PRSLDPAR                                             */
+/* Input:                                                             */
+/*   applid of parse table                                            */
+/*                                                                    */
+/* Output:                                                            */
+/*   None                                                             */
+/*                                                                    */
+/* Depends on:                                                        */
+/*  FRCONST                                                           */
+/*  FILRFIL                                                           */
+/*  TSTFEXT                                                           */
+/**********************************************************************/
+PRSE_Find_Parser_Table:
+    arg applid
+    /* register files produced by GENCMD */
+    workindex1 = fileindex + 1
+    filespec = applid||'UPA TEXT *'
+    call LIB_Register_File workindex filespec 
+    fileindex = workindex1
+    workindex2 = fileindex + 1
+    filespec  = applid||'USY TEXT *'
+    call LIB_Register_File workindex filespec
+    fileindex = workindex2
+    /* do files exist? */
+    call LIB_Test_fileexists workindex1
+    src1 = rc
+    call LIB_Test_fileexists workindex2 
+    src2=rc
+ return src1+src2   

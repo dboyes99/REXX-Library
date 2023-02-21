@@ -28,6 +28,7 @@ LIB_fru_constants:
     RC_DIRENTEXISTS = 28       /* directory entry exists */
     RC_INVOPTION = 998         /* invalid option */
     RC_OTHERERR = 999          /* some other unexplained error happened */
+    RC_PARSEERR = 24           /* failed to parse */
 
 /* frequently used constants */
     VAL_CHAR_NULL = ''         /* null string */

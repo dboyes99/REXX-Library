@@ -2,12 +2,12 @@
 /* LIB_register_file - files of interest */
 /* EXECLIB: FILRFIL  */
 LIB_Register_File:
-  arg index filespec
+  arg fileindex filespec
 
-  file.index.name = word(filespec,1)
-  file.inde.type = word(filespec,2)
-  file.index.mode = word(filespec,3)
+  file.fileindex.name = word(filespec,1)
+  file.fileindex.type = word(filespec,2)
+  file.fileindex.mode = word(filespec,3)
 
-  call LIB_Refresh_File_Data index
+  call LIB_Refresh_File_Data fileindex
 
 return rc

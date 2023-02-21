@@ -4,18 +4,18 @@
 /* EXECLIB Name: TSTFEXT                                   */
 /*                                                         */
 /* Input:                                                  */
-/*      file.index.name - obvious                          */
-/*      file.index.type - obvious                          */
-/*      file.index.mode - obvious                          */
+/*      file.fileindex.name - obvious                      */
+/*      file.fileindex.type - obvious                      */
+/*      file.fileindex.mode - obvious                      */
 /*                                                         */
 /* Output:                                                 */
-/*      file.index.recfm                                   */
-/*      file.index.lrecl                                   */
-/*      file.index.numrecords                              */
-/*      file.index.numblocks                               */
-/*      file.index.date                                    */
-/*      file.index.time                                    */
-/*      file.index.exists - true/false                     */
+/*      file.fileindex.recfm                               */
+/*      file.fileindex.lrecl                               */
+/*      file.fileindex.numrecords                          */
+/*      file.fileindex.numblocks                           */
+/*      file.fileindex.date                                */
+/*      file.fileindex.time                                */
+/*      file.fileindex.exists - true/false                 */
 /*                                                         */
 /* Return Codes:                                           */
 /*      RC_OK = all well                                   */
