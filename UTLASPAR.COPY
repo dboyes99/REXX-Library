@@ -1,3 +1,4 @@
+*COPY UTLASPAR
 /* LIB_Assign_Parm_To_App_Value - assign parameter to app value */
 LIB_Assign_Parm_To_App_Value:
     arg parm var
