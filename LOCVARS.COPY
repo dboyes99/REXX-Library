@@ -4,6 +4,6 @@
 /* EXECLib: LOCVARS                                                       */
 /**************************************************************************/
 
-/* no content in template */
+/* put local variable init after this line */
     
 return RC_OK

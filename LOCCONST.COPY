@@ -13,4 +13,6 @@ pgm.applid = 'XXX'                   /* application id for XMITMSG    */
 /* set globalv flag to false */
 FLAG_GLOBALV_init = VAR_false
 
+/* put other local constants after this line */
+
 return RC_OK
