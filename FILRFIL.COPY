@@ -9,5 +9,4 @@ LIB_Register_File:
   file.fileindex.mode = word(filespec,3)
 
   call LIB_Refresh_File_Data fileindex
-
 return rc

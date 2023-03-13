@@ -1,0 +1,31 @@
+*COPY FILCPY 
+/**********************************************************************/
+/* LIB_Copy_File                                                      */
+/* EXECLIB Name: FILCPY                                               */
+/* Input:                                                             */
+/*   file index of file to be copied                                  */
+/*   destination                                                      */                              */
+/* Output: (if successful)                                            */
+/*                                                                    */
+/* Depends on:                                                        */
+/*  FRCONST                                                           */
+/**********************************************************************/
+LIB_Copy_File:
+    arg fileindex dest
+    src = file.fileindex.name file.fileindex.type file.fileindex.mode
+    call LIB_test_fileexists fileindex
+    replace=VAL_false
+    if rc = RC_OK then do
+        replace = VAL_true
+    end
+    select
+        when replace = VAL_true do
+            'COPYFILE' src dest '( REPLACE'
+            src = rc
+        end
+        when replace = VAL_false do
+            src = RC_FILEEXISTS
+        end
+        otherwise noop 
+    end
+return src
