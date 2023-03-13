@@ -32,27 +32,6 @@ LIB_Set_FP:
     dirspec.entry.filepoool = firepool
 return RC_OK
 
-/*********************************************************************/  
-/**** Test_Dir_Exists              2021-03-13                     ****/  
-/*********************************************************************/  
-/* Purpose: Test if SFS dir exists                                   */  
-/* Input  : dirspec. - table of directories in use                   */
-/*          nnnnnnn  - index of entry to test                        */
-/*          dirspec.nnnnnn.filepool = filepool name of n'th entry    */
-/*          dirspec.nnnnnn.path = path being tested                  */  
-/* Output : VAL_true if exists, VAL_False if notd for entry nnnnnn    */                                                         */  
-/*                                                                   */  
-/*********************************************************************/  
-Test_Dir_Exists:
-    arg entry
-    call LIB_Silence_Output
-    'LISTDIR' dirspec.entry.filepool || dirspec.entry.path  
-    src = rc
-    call LIB_Resume_Output
-    if src = RC_OK then rc = VAL_True
-       else rc = VAL_False
-return rc
-
 /* register dir in dirspec table */
 LIB_Register_Dir_Entry:
     arg index fp path
