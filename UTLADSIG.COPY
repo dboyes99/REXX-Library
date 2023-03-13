@@ -7,7 +7,7 @@
 /*                                                                   */   
 /*********************************************************************/ 
 
-LIB_Arn_Syntax:
+LIB_Arm_Syntax:
     signal on syntax
 return RC_OK
 
