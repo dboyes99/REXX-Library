@@ -9,3 +9,8 @@ pgm.version = 'n'                    /* edit to reflect actual VRM    */
 pgm.release = 'n'
 pgm.modlevel = 'n'
 pgm.applid = 'XXX'                   /* application id for XMITMSG    */
+
+/* set globalv flag to false */
+FLAG_GLOBALV_init = VAR_false
+
+return RC_OK

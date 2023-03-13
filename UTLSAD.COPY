@@ -1,0 +1,37 @@
+*COPY UTLSAD
+/*********************************************************************/ 
+/* LIB_Save_Accessed_Disks     <date>                      UTLSAD    */ 
+/*********************************************************************/ 
+/* Purpose: Save Accessed disk list                                  */ 
+/* Input  : None                                                     */ 
+/* Output : globalv group ACCDISK                                    */ 
+/*          globalv vars  DISKA-Z                                    */
+/*                                                                   */ 
+/*********************************************************************/ 
+LIB_Save_Accessed_Disks:
+    filemodelist = 'ABCDEFGHIJKLMNOPQRTUVWXYZ'
+    /* CMS ACCESS does not allow filemode S to be accessed */
+    for x = 1 to length(filemodelist) do
+        filemode = pos(filemodelist,x)
+        'PIPE CMS QUERY DISK' filemode ,
+            '| DROP 1' ,
+            '| VAR line'
+        parse var line . vdev mode status .
+        select
+            when vdev = 'DIR' then do
+                PIPE CMS QUERY ACCESSED' mode ,
+                    '| DROP 1',
+                    '| VAR dir'
+                parse var dir mode status . . vdev .
+            end
+            otherwise noop
+        end
+        if FLAG_GLOBALV_init = VAL_False then do
+            call LIB_GLOBALV_Init
+        end
+        var = 'DISK' || filemode 
+        value = vdev mode status
+        call LIB_Select_GLOBALV_Group "ACCDISK"
+        call LIB_Set_GLOBALV_Var_For_This_IPL var value
+    end
+return rc

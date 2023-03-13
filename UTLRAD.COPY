@@ -1,0 +1,23 @@
+*COPY UTLRAD
+/*********************************************************************/ 
+/* LIB_Restore_Accessed_Disks  <date>                         UTLRAD */ 
+/*********************************************************************/ 
+/* Purpose: Restore accessed disk list                               */ 
+/* Input  : None                                                     */ 
+/* Output : None                                                     */ 
+/*                                                                   */ 
+/*********************************************************************/
+LIB_Restore_Accessed_Disks:
+    filemodelist = 'ABCDEFGHIJKLMNOPQRTUVWXYZ'
+    /* CMS ACCESS does not allow filemode S to be accessed */
+    for x = 1 to length(filemodelist) do
+        filemode = pos(filemodelist,x)
+        if FLAG_GLOBALV_init = VAL_False then do
+            call LIB_GLOBALV_Init
+        end
+        var = 'DISK' || filemode
+        call LIB_Get_GLOBALV_Var var
+        parse var var vdev mode status
+        'ACCESS' vdev mode
+    end
+ return rc
