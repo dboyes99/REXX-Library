@@ -6,7 +6,7 @@ inserted into your execs via the supplied INLINE XEDIT macro.
 
 Routines are included using a single linen REXX comment(s) of the form:
 
-/* $$INCLUDE <maclib-membername> description */
+/* $$INCLUDE maclib-membername description */
   
 Improvements and additions are welcome if you have a better way to do any of these tasks.
 Enjoy!
