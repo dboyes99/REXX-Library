@@ -1,8 +1,13 @@
-/*********************************************************************/
-/*  LIB_Set_AMENG     - Set Lang to AMENG                  UTLSAMEN  */ 
+*COPY UTLSAMEN
 /*********************************************************************/ 
-
-LIB_Set_AMENG:
+/* UTL_Set_AMENG                                            UTLSAMEN */ 
+/*********************************************************************/ 
+/* Purpose: Set default language to AMENG                            */ 
+/* Input  : None                                                     */ 
+/* Output : None                                                     */ 
+/*                                                                   */ 
+/*********************************************************************/ 
+UTL_Set_AMENG:
     'CP SET LANGUAGE AMENG'
     src = rc 
 return rc

@@ -1,16 +1,13 @@
 *COPY UTLSVARD
 /*********************************************************************/ 
-/**** Set_Variable_Defaults           2021-02-15        UTLSVARD  ****/ 
+/* UTL_Set_Variable_Defaults                                UTLSVARD */ 
 /*********************************************************************/ 
 /* Purpose: Initialize program variables to default values           */ 
 /* Input  : None                                                     */ 
 /* Output : None                                                     */ 
 /*********************************************************************/ 
-LIB_Set_Variable_Defaults:                                                  
-                                                                        
-  Have_SUPERSAY =  VAL_True           /* is SUPERSAY available?      */ 
-                                      /* 1=yes, 0=no                 */ 
-                                                                        
-                                                                        
+UTL_Set_Variable_Defaults:                                                  
+     /* insert program variable defaults here                        */                                                                      
+                                                                      
 return RC_OK                          /* routine exit                */ 
                                                                         

@@ -1,12 +1,20 @@
 *COPY FILRFIL
-/* LIB_register_file - files of interest */
-/* EXECLIB: FILRFIL  */
-LIB_Register_File:
+/*********************************************************************/ 
+/* FIL_Register_File                                         FILRFIL */ 
+/*********************************************************************/ 
+/* Purpose: Register Files of Interest                               */ 
+/* Input  : fileindex - reference number for file entry              */ 
+/*          filespec - CMS fn ft fm of file                          */
+/* Output : Stem file.fileindex.name - filename                      */ 
+/*               file.fileindex.type - filetype                      */ 
+/*               file.fileindex.mode - filemode                      */
+/*********************************************************************/ 
+FIL_Register_File:
   arg fileindex filespec
 
   file.fileindex.name = word(filespec,1)
   file.fileindex.type = word(filespec,2)
   file.fileindex.mode = word(filespec,3)
 
-  call LIB_Refresh_File_Data fileindex
+  call FIL_Refresh_File_Data fileindex /* get other file info */
 return rc

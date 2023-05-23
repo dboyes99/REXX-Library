@@ -1,42 +1,45 @@
 *COPY UTLGFUNC
-/***********************************************************************/
-/* GLOBALV Functions                                                   */
-/* Execlib: UTLGFUNC                                                   */
-/***********************************************************************/
-
+/*********************************************************************/ 
+/* UTL_GlobalV_Funtions                                     UTLGFUNC */ 
+/*********************************************************************/ 
+/* Purpose: Assorted GLOBALV Functions                               */ 
+/* Input  : None                                                     */ 
+/* Output : None                                                     */ 
+/*                                                                   */ 
+/*********************************************************************/ 
 /* Init GLOBALV */
 
-LIB_Init_GLOBALV:
+UTL_Init_GLOBALV:
   'GLOBALV INIT'
 return rc
 
 /* List GLOBALV Groups */
 
-LIB_List_All_GLOBALV_Groups: 
+UTL_List_All_GLOBALV_Groups: 
    'GLOBALV GRPLIST'
 return rc
 
 /* Stack list of GLOBALV Groups */
 
-LIB_Stack_GLOBALV_Group_List:
+UTL_Stack_GLOBALV_Group_List:
   'GLOBALV GRPSTACK'
 return rc
 
 /* Stem GLOBALV Group List */
 
-LIB_Stem_GLOBALV_Groups:
+UTL_Stem_GLOBALV_Groups:
   'PIPE CMS GLOBALV GRPLIST | STEM GLOBALV_Groups'
 return rc
 
 /* Purge All GLOBALV */
 
-LIB_Purge_All_GLOBALV;
+UTL_Purge_All_GLOBALV;
   'GLOBALV PURGE'
 return rc
 
 /* Select Group  */
 
-LIB_Select_GLOBALV_Group:
+UTL_Select_GLOBALV_Group:
   arg groupname
   'GLOBALV SELECT' groupname
   src = rc
@@ -44,15 +47,15 @@ return rc
 
 /* Return to group UNNAMED */
 
-LIB_Select_GLOBALV_Group_Unnamed:
+UTL_Select_GLOBALV_Group_Unnamed:
   'GLOBALV SELECT UNNAMED'
 return rc
 
 /* Purge Specific Group */
 
-LIB_Purge_Specific_Group:
+UTL_Purge_Specific_Group:
   arg groupname
-  call LIB_Select_GLOBALV_Group groupname
+  call UTL_Select_GLOBALV_Group groupname
   if rc = RC_OK then do
     'GLOBALV PURGE'
   end
@@ -60,7 +63,7 @@ return rc
 
 /* Set variable to token for current IPL */
 
-LIB_Set_Token_Value_For_This_IPL:
+UTL_Set_Token_Value_For_This_IPL:
   arg token value
   'GLOBALV SET' token value
   src = rc
@@ -68,7 +71,7 @@ return src
 
 /* set var to token for this session */
 
-LIB_Set_Token_Value_For_This_Session:
+UTL_Set_Token_Value_For_This_Session:
     arg token value
     'GLOBALV SETS' token value
     src = rc
@@ -76,7 +79,7 @@ return src
 
 /* set var to token permanently */
 
-LIB_Set_Token_Value_Permanently:
+UTL_Set_Token_Value_Permanently:
     arg token value
     'GlOBALV SETP' token value
     src = rc
@@ -84,7 +87,7 @@ return src
 
 /* set var to literal (spaces allowed) */
 
-LIB_Set_Var_To_Literal_For_This_IPL:
+UTL_Set_Var_To_Literal_For_This_IPL:
     arg var literal
     'GLOBALV SETL' var literal
     src=rc
@@ -92,7 +95,7 @@ return src
 
 /* Set Var to Literal For This Session */
 
-LIB_Set_Var_To_Literal_For_This_Session:
+UTL_Set_Var_To_Literal_For_This_Session:
     arg var literal
     'GLOBALV SETLS' var literal
     src = rc
@@ -100,7 +103,7 @@ return rc
 
 /* Set var to literal permanently */
 
-LIB_Set_Var_To_Literal_Permanent:
+UTL_Set_Var_To_Literal_Permanent:
     arg var literal
     'GLOBALV SETLP' var literal
     src = rc
@@ -108,7 +111,7 @@ return src
 
 /* Display list of variables and their values in a group */
 
-LIB_Display_GLOBALV_Variable_List:
+UTL_Display_GLOBALV_Variable_List:
     arg groupname
     'GLOBALV SELECT' groupname 'LIST'
     src = rc
@@ -116,14 +119,14 @@ return src
 
 /* get stem of variables and values */
 
-LIB_Get_Stem_of_GLOBALV_Variables:
+UTL_Get_Stem_of_GLOBALV_Variables:
     result.0.0=0
     'PIPE CMS GLOBALV LIST | STEM result.'
     src = rc
 
 /* Get specific GLOBALV Value into REXX variable */
 
-LIB_Get_GLOBALV_Variable:
+UTL_Get_GLOBALV_Variable:
     arg variable
     'GLOBALV GET' variable
     src=rc
@@ -131,7 +134,7 @@ return src
 
 /* set specific var for this ipl */
 
-LIB_Set_GLOBALV_Var_For_This_IPL:
+UTL_Set_GLOBALV_Var_For_This_IPL:
     arg variable
     'GLOBALV PUT' variable
     src = rc
@@ -139,7 +142,7 @@ return src
 
 /* set globalv for this session */
 
-LIB_Set_GLOBALV_Var_For_This_Session:
+UTL_Set_GLOBALV_Var_For_This_Session:
   arg variable
     'GLOBALV PUTS' variable
     src = rc
@@ -147,7 +150,7 @@ return src
 
 /* set globalv permanently */
 
-LIB_Set_GLOBALV_Var_Permanent:
+UTL_Set_GLOBALV_Var_Permanent:
     arg variable
     'GLOBALV PUTP' variable
     src = rc

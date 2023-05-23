@@ -1,12 +1,13 @@
+*COPY UTLFMSG
 /*********************************************************************/ 
-/* LIB_Format_Msg_With_Subs:        2023-02-20           UTLFMSG     */ 
+/* UTL_Format_Msg_With_Subs:        2023-02-20           UTLFMSG     */ 
 /*********************************************************************/ 
 /* Purpose: Retrieve Message Text with Substitution                  */ 
 /* Input  : message number and Substitution var names                */ 
 /* Output : message nnnn in stem message.x                           */ 
 /*                                                                   */ 
 /*********************************************************************/ 
-LIB_Format_Msg_With_Subs:         
+UTL_Format_Msg_With_Subs:         
     arg applid msgnum subvars
     'XMITMSG' msgnum subvars '( APPLID' pgm.applid 'VAR COMPRESS'
     src = rc

@@ -1,6 +1,6 @@
 *COPY UTLTERMC
 /*********************************************************************/ 
-/* GetTermChar                                              UTLTERMC */ 
+/* UTL_Get_Terminal_Characteristics                         UTLTERMC */ 
 /*********************************************************************/ 
 /* Purpose: Get terminal characteristics and features                */ 
 /* Input  : None                                                     */ 
@@ -11,7 +11,7 @@
 /*          termchar.ext_highlight = is ext highlighting supported?  */
 /*                                                             (1/0) */
 /*********************************************************************/
-GetTermChar: 
+UTL_Get_Terminal_Characteristics: 
     /* clear initial values */
     termchar.height = VAR_NUM_NULL
     termchar.width = VAR_NUM_NULL
@@ -32,4 +32,5 @@ GetTermChar:
     if substr(flag_lnib,2,1)='1' then termchar.ext_highl=VAR_True
     termchar.width=x2d(c2x(width))
     termchar.height=x2d(c2x(height))
+    
 return RC_OK

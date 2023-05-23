@@ -7,6 +7,6 @@
 /* Output : None                                                     */ 
 /*                                                                   */ 
 /*********************************************************************/ 
-LIB_Address_CMD:         
+UTL_Address_CMD:         
      address COMMAND                  /* change context to COMMAND   */ 
 return RX_OK                          /* end routine                 */ 

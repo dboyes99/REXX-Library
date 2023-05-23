@@ -1,12 +1,12 @@
 *COPY UTLSOUT
 /*********************************************************************/
-/* Silence_Output                     2021-03-10           UTLSOUT   */
+/* UTL_Silence_Output                                      UTLSOUT   */
 /*********************************************************************/
 /* Purpose: Silence CMS typed output                                 */
 /* Input  : None                                                     */
 /* Output : None                                                     */
 /*                                                                   */
 /*********************************************************************/
-LIB_Silence_Output:                                                        
+UTL_Silence_Output:                                                        
   'SET CMSTYPE HT'                    /* silence output              */
 return RX_OK                          /* end routine                 */

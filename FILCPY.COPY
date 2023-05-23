@@ -1,31 +1,64 @@
 *COPY FILCPY 
-/**********************************************************************/
-/* LIB_Copy_File                                                      */
-/* EXECLIB Name: FILCPY                                               */
-/* Input:                                                             */
-/*   file index of file to be copied                                  */
-/*   destination                                                      */                              */
-/* Output: (if successful)                                            */
-/*                                                                    */
+*COPY filename
+/*********************************************************************/ 
+/* FIL_Copy_File                                              FILCPY */ 
+/*********************************************************************/ 
+/* Purpose: Copy a registered CMS file to another reg CMS file       */ 
+/* Input  : fileindex - index num of source CMS file                 */
+/*          destindex - index num of destination CMS file            */
+/*          replace - replace existing file? (1/0)                   */
+/* Output : return code from COPYFILE                                */ 
+/*          RC_FILEEXISTS if file exists and not auth to replace     */
+/*                                                                   */ 
+/*********************************************************************/ 
 /* Depends on:                                                        */
 /*  FRCONST                                                           */
 /**********************************************************************/
-LIB_Copy_File:
-    arg fileindex dest
+FIL_Copy_File:
+    arg fileindex destindex replace_auth
+
+    /* validate replace auth */
+    select 
+        when replace_auth = VAL_True then do
+            parm = 'REPLACE'
+            replace = VAL_True
+        end
+        when replace_auth /= VAL_True then do 
+            parm = VAR_CHAR_NULL
+            replace = VAL_False
+        end
+        otherwise do /* default to no replace */
+            parm = VAR_CHAR_NULL
+            replace = VAL_False
+        end
+    end
+
+    /* construct source and detination filespecs for COPYFILE */
     src = file.fileindex.name file.fileindex.type file.fileindex.mode
-    call LIB_test_fileexists fileindex
-    replace=VAL_false
-    if rc = RC_OK then do
-        replace = VAL_true
-    end
-    select
-        when replace = VAL_true do
-            'COPYFILE' src dest '( REPLACE'
-            src = rc
+    dest = file.destindex.name file.destindex.type file.destindex.mode
+
+    /* does source file exist? */
+    call TST_Test_File_Exists fileindex
+    src_file_exists = rc
+
+    /* does dest file exist? */
+    call TST_Test_File_Exists destindex
+    dest_file_exists = rc
+
+    /* do the deed */
+    if src_file_exists = RC_OK then do
+        select
+            when replace = VAL_true do
+                'COPYFILE' src dest '(' parm
+                src = rc
+            end
+            when replace = VAL_false do
+                src = RC_FILEEXISTS
+            end
+            otherwise noop 
         end
-        when replace = VAL_false do
-            src = RC_FILEEXISTS
-        end
-        otherwise noop 
-    end
+    end /* if source exists */
+    else do
+        src = RC_NOTFOUND
+    end /* otherwise bail with error */
 return src

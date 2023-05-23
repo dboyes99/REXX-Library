@@ -1,9 +1,12 @@
 *COPY UTLSARG
-/***********************************************************************/
-/*** LIB_save_argline - copy argline into REXX var argline           ***/
-/*** Execlib: UTLSARG                                                ***/
-/***********************************************************************/
-
-LIB_Save_Argline:
+/*********************************************************************/ 
+/* UTL_Save_Argline                                          UTLSARG */ 
+/*********************************************************************/ 
+/* Purpose: Copy program argline into REXX var argline               */ 
+/* Input  : None                                                     */ 
+/* Output : program argline in argline                               */ 
+/*                                                                   */ 
+/*********************************************************************/ 
+UTL_Save_Argline:
     parse arg argline
 return RC_OK

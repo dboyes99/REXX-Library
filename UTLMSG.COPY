@@ -1,18 +1,15 @@
 *COPY UTLMSG
-/***************************************************************************/
-/* Message - type message to user                                          */
-/* EXECLIB Name: UTLMSG                                                   */
+/**************************************************************************/ 
+/* UTL_Message                                                     UTLMSG */ 
+/**************************************************************************/ 
+/* Purpose: Type message to user                                          */ 
 /* Input:                                                                  */
 /*   text - Message to be displayed                                        */
 /*   sev  - message severity                                               */
 /* Output:                                                                 */
 /*   message is typed on console                                           */
 /***************************************************************************/
-/***************************************************************************/
-/* Last Modified: 30 JUL 2022                                              */
-/*    30-JUL-2022 DEB Initial commit                                       */
-/***************************************************************************/
-LIB_Message: 
+UTL_Message: 
     parse arg message sev
 
     /* if null text, silently return */

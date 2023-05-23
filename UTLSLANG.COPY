@@ -1,3 +1,14 @@
-/*********************************************************************/
-/*  LIB_Set_Lang    - Set Language to parm                UTLSLANG   */ 
+*COPY UTLSLANG
 /*********************************************************************/ 
+/* UTL_Set_Lang                                             UTLSLANG */ 
+/*********************************************************************/ 
+/* Purpose: Set national language to parm                            */ 
+/* Input  : None                                                     */ 
+/* Output : None                                                     */ 
+/*                                                                   */ 
+/*********************************************************************/ 
+UTL_Set_Lang:
+    arg language
+    'CP SET LANGUAGE' language
+    src=rc
+return src

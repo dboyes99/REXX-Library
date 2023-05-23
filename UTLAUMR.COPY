@@ -1,12 +1,13 @@
+*COPY UTLAUMR
 /*********************************************************************/   
-/**** Activate Message Repo           2023-02-20        UTLAUMR   ****/   
+/**** UTL_Activate_MSG_Repo                             UTLAUMR   ****/   
 /*********************************************************************/   
 /* Purpose: Activate Message Repo                                    */   
 /* Input  : msg repo to activate                                                     */   
 /* Output : None                                                     */   
 /*                                                                   */   
 /*********************************************************************/
-LIB_Activate_Msg_Repo:
+UTL_Activate_Msg_Repo:
     arg msgrepo 
     'SET LANGUAGE (ADD' msgrepo 'USER'
     src = rc 

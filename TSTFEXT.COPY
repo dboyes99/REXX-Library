@@ -1,7 +1,7 @@
 *COPY TSTFEXT
 /***********************************************************/
 /* test_fileexists - does file exist?                      */
-/* EXECLIB Name: TSTFEXT                                   */
+/* EXECTST Name: TSTFEXT                                   */
 /*                                                         */
 /* Input:                                                  */
 /*      file.fileindex.name - obvious                      */
@@ -26,7 +26,7 @@
 /*      fru_constants (must be called before use)          */
 /*      message                                            */
 /***********************************************************/
-LIB_test_fileexists:
+TST_Test_File_Exists:
     arg index
     /* validate input parms */
     

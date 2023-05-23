@@ -15,7 +15,7 @@
 /* Uses:                                                     */
 /*      fru_constants (must be called before use)            */
 /*************************************************************/
-test_diskrw:
+TST_test_diskrw:
     disk.writable = VAL_false
     'PIPE CMS QUERY DISK' disk.filemode 
         '| DROP 1', 

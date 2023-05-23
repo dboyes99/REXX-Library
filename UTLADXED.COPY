@@ -1,7 +1,16 @@
+*COPY UTLADXED
+/*********************************************************************/ 
+/* UTL_Address_Xedit           <date>                      UTLADXED  */ 
+/*********************************************************************/ 
+/* Purpose: Set command context to XEDIT                             */ 
+/* Input  : None                                                     */ 
+/* Output : None                                                     */ 
+/*                                                                   */ 
+/*********************************************************************/ 
 /*********************************************************************/
 /* Address_Xedit       Set command context to XEDIT         UTLADXED */
 /*********************************************************************/
-Address_Xedit:
+UTL_Address_Xedit:
  address XEDIT                        /* XEDIT from here, baby       */
  rc = RX_OK                           /* success                     */
 return rc                             /* end routine                 */

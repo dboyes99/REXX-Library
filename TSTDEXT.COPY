@@ -9,7 +9,7 @@
 /* Output : VAL_true if exists, VAL_False if notd for entry nnnnnn    */                                                         */  
 /*                                                                   */  
 /*********************************************************************/  
-Test_Dir_Exists:
+TST_Dir_Exists:
     arg entry
     call LIB_Silence_Output
     'LISTDIR' dirspec.entry.filepool || dirspec.entry.path  

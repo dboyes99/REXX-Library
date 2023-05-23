@@ -1,11 +1,15 @@
 *COPY UTLSFS
-/**********************************************************************/
-/*** SFS Functions                                                  ***/
-/*** ExecLIB: UTLSFS                                                ***/
-/**********************************************************************/
+/*********************************************************************/ 
+/* UTL SFS Functions                                          UTLSFS */ 
+/*********************************************************************/ 
+/* Purpose: Collection of SFS-related funtions                       */ 
+/* Input  : None                                                     */ 
+/* Output : None                                                     */ 
+/*                                                                   */ 
+/*********************************************************************/ 
 
 /*********************************************************************/  
-/**** LIB_DIR_Create                      2021-03-13                  ****/  
+/**** UTL_DIR_Create                      2021-03-13                  ****/  
 /*********************************************************************/  
 /* Purpose: Create SFS Directory                                         */  
 /* Input  : dirspec - table of directory spec to create              */ 
@@ -14,28 +18,28 @@
 /* Output :                                                          */  
 /*                                                                   */  
 /*********************************************************************/  
-LIB_DIR_Create:                                                              
+UTL_DIR_Create:                                                              
   arg index                           /* get dir index to create     */  
   'CREATE DIR' dirspec.index.path     /* create it                   */  
 return rc                             /* end routine                 */ 
 
 /*********************************************************************/  
-/**** LIB_Set_FP               2021-03-13                         ****/  
+/**** UTL_Set_FP               2021-03-13                         ****/  
 /*********************************************************************/  
 /* Purpose: Set Filepool ID                                          */  
 /* Input  : filepool - what filepool should we use?                  */  
 /* Output : dirspec.nnnnn.filepool = filepool id for entry nnnnnn    */                                                         */  
 /*                                                                   */  
 /*********************************************************************/  
-LIB_Set_FP:          
+UTL_Set_FP:          
     arg entry filepool
     dirspec.entry.filepoool = firepool
 return RC_OK
 
 /* register dir in dirspec table */
-LIB_Register_Dir_Entry:
+UTL_Register_Dir_Entry:
     arg index fp path
-    call LIB_Identify_My_Default_FP
+    call UTL_Identify_My_Default_FP
     dirspec.index.filepool = fp
     dirspec.index.path = path
     if dirspec.index.filepool = '' then dirspec.index.filepool = default_FP
@@ -45,7 +49,7 @@ return index
 
 /* Identify default FP */
 
-LIB_Identify_My_Default_FP:
+UTL_Identify_My_Default_FP:
     PIPE CMS 'QUERY FILEPOOL PRIMARY' ,
          '| SPECS WORD 2' ,
          '| VAR default_FP'
@@ -53,7 +57,7 @@ return rc
 
 /* Acccess directory as specified file mode */
 
-LIB_Access_Dir_As_Filemode:
+UTL_Access_Dir_As_Filemode:
     arg filemode index
     'ACCESS' dirspec.index.fullpath filemode
     src = rc

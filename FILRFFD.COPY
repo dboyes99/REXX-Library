@@ -1,10 +1,17 @@
 *COPY FILRFFD
-/*******************************************************/
-/* LIB_refresh_file_data                               */
-/* EXECLIB: FILRFFD                                    */
-/*******************************************************/
-
-LIB_Refresh_File_Data:
+/*********************************************************************/ 
+/* FIL_Refresh_File_Data                                    FILERFFD */ 
+/*********************************************************************/ 
+/* Purpose: Get extended info about a registered CMS file            */ 
+/* Input  : index - file of interest                                 */ 
+/* Output : file.index.recfm - RECFM of registered CMS file          */ 
+/*          file.index.lrecl - logical rec length of reg CMS file    */ 
+/*          file.index.numrecords - num of records in reg CMS file   */ 
+/*          file.index.numblocks - num of blocks in reg CMS file     */
+/*          file.index.date - last modified date                     */
+/*          file.index.time - last modified time                     */
+/*********************************************************************/ 
+FIL_Refresh_File_Data:
     arg index
 
     'PIPE CMS LISTFILE' file.index.filespec '( FULLDATE' ,

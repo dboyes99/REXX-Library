@@ -1,6 +1,6 @@
 *COPY UTLSAD
 /*********************************************************************/ 
-/* LIB_Save_Accessed_Disks     <date>                      UTLSAD    */ 
+/* UTL_Save_Accessed_Disks                                 UTLSAD    */ 
 /*********************************************************************/ 
 /* Purpose: Save Accessed disk list                                  */ 
 /* Input  : None                                                     */ 
@@ -8,7 +8,7 @@
 /*          globalv vars  DISKA-Z                                    */
 /*                                                                   */ 
 /*********************************************************************/ 
-LIB_Save_Accessed_Disks:
+UTL_Save_Accessed_Disks:
     filemodelist = 'ABCDEFGHIJKLMNOPQRTUVWXYZ'
     /* CMS ACCESS does not allow filemode S to be accessed */
     for x = 1 to length(filemodelist) do
@@ -27,11 +27,11 @@ LIB_Save_Accessed_Disks:
             otherwise noop
         end
         if FLAG_GLOBALV_init = VAL_False then do
-            call LIB_GLOBALV_Init
+            call UTL_GLOBALV_Init
         end
         var = 'DISK' || filemode 
         value = vdev mode status
-        call LIB_Select_GLOBALV_Group "ACCDISK"
-        call LIB_Set_GLOBALV_Var_For_This_IPL var value
+        call UTL_Select_GLOBALV_Group "ACCDISK"
+        call UTL_Set_GLOBALV_Var_For_This_IPL var value
     end
 return rc

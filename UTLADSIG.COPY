@@ -1,5 +1,5 @@
 /*********************************************************************/   
-/**** LIB_Signals                   2021-03-13        UTLADSIG    ****/   
+/**** UTL_Signals                   2021-03-13        UTLADSIG    ****/   
 /*********************************************************************/   
 /* Purpose: Arm/disarm novalue and syntax err handlers               */   
 /* Input  : None                                                     */   
@@ -7,31 +7,31 @@
 /*                                                                   */   
 /*********************************************************************/ 
 
-LIB_Arm_Syntax:
+UTL_Arm_Syntax:
     signal on syntax
 return RC_OK
 
-LIB_Arm_NoValue: 
-    signal on NoValue name LIB_Arm_NoValue_Action
+UTL_Arm_NoValue: 
+    signal on NoValue name UTL_Arm_NoValue_Action
 return rc 
 
-LIB_Disarm_Syntax:
+UTL_Disarm_Syntax:
     signal off syntax
 return RC_OK
 
-LIB_Disarm_NoValue:
+UTL_Disarm_NoValue:
     signal off NoValue
 return RC_OK 
 
-LIB_Arm_NoValue_Action:
+UTL_Arm_NoValue_Action:
     call LIB_Disarm_NoValue
     badline = sigl                     
     varname = condition('D')           
-    sourcel = LIB_Get_SourceLine(badline)   
+    sourcel = UTL_Get_SourceLine(badline)   
     msg = 'NOVALUE of "'varname'"' 
 return RC_OK   
 
-LIB_Get_Sourceline:
+UTL_Get_Sourceline:
    arg l                                                
    line = ''                                            
    do forever                                           

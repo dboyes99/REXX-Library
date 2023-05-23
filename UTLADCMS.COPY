@@ -2,7 +2,7 @@
 /*********************************************************************/
 /*  Address_CMS            - command context is CMS       UTLADCMS   */ 
 /*********************************************************************/ 
-Address_CMS:
+UTL_Address_CMS:
      address CMS                      /* CMS from here, baby         */ 
      rc = RX_OK                       /* success                     */ 
 return rc                             /* end routine                 */ 

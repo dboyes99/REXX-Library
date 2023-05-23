@@ -1,13 +1,13 @@
 *COPY UTLROUT
 /*********************************************************************/  
-/* Resume_Output                      2021-03-10           UTLROUT   */  
+/* UTL_Resume_Output                                       UTLROUT   */  
 /*********************************************************************/  
 /* Purpose: Resume CMS typed output                                  */  
 /* Input  : None                                                     */  
 /* Output : None                                                     */  
 /*                                                                   */  
 /*********************************************************************/  
-Resume_Output:                                                           
+UTL_Resume_Output:                                                           
   'SET CMSTYPE RT'                    /* silence output              */  
 return RX_OK                          /* end routine                 */  
                                                                          
