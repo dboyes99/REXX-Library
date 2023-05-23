@@ -18,5 +18,5 @@ LIB_Check_Required_Dir:
    end                                /* if RC_NOTFOUND              */ 
  else do                              /* found                       */ 
    return RC_OK                       /* function returns RC_OK      */ 
-   end                                /* either found or not         */ 
+  end                                 /* either found or not         */ 
                                                                         
