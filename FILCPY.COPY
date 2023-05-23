@@ -1,5 +1,4 @@
 *COPY FILCPY 
-*COPY filename
 /*********************************************************************/ 
 /* FIL_Copy_File                                              FILCPY */ 
 /*********************************************************************/ 
@@ -9,11 +8,12 @@
 /*          replace - replace existing file? (1/0)                   */
 /* Output : return code from COPYFILE                                */ 
 /*          RC_FILEEXISTS if file exists and not auth to replace     */
+/*          RC_NOTFOUND if src file not found                        */
 /*                                                                   */ 
 /*********************************************************************/ 
-/* Depends on:                                                        */
-/*  FRCONST                                                           */
-/**********************************************************************/
+/* Depends on:                                                       */
+/*  FRCONST                                                          */
+/*********************************************************************/
 FIL_Copy_File:
     arg fileindex destindex replace_auth
 
