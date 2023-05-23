@@ -13,8 +13,8 @@
 /*********************************************************************/
 GetTermChar: 
     /* clear initial values */
-    termchar.height = 0
-    termchar.width = 0
+    termchar.height = VAR_NUM_NULL
+    termchar.width = VAR_NUM_NULL
     termchar.ext_color = VAR_False
     termchar.ext_highlight = VAR_False
     
