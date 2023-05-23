@@ -1,0 +1,35 @@
+*COPY UTLTERMC
+/*********************************************************************/ 
+/* GetTermChar                                              UTLTERMC */ 
+/*********************************************************************/ 
+/* Purpose: Get terminal characteristics and features                */ 
+/* Input  : None                                                     */ 
+/* Output : termchar. stem with following vars:                      */ 
+/*          termchar.width = how many cols wide is terminal          */ 
+/*          termchar.height = how many lines for terminal            */
+/*          termchar.ext_color = is ext color supported? (1/0)       */
+/*          termchar.ext_highlight = is ext highlighting supported?  */
+/*                                                             (1/0) */
+/*********************************************************************/
+GetTermChar: 
+    /* clear initial values */
+    termchar.height = 0
+    termchar.width = 0
+    termchar.ext_color = VAR_False
+    termchar.ext_highlight = VAR_False
+    
+    /* use diag 8c to get current console capabilities */
+    currterm=diag(8c,,,-1)
+   
+    /* parse response from diag 8c */
+    parse var currterm 1 flags 2 . 3 width 5 height 7 .
+    flags=c2x(flags)
+    flag_lnib=x2b(c2x(left(flags,1)))
+    flag_rnib=x2b(c2x(right(flags,1)))
+    
+    /* set term characteristics */
+    if substr(flag_lnib,1,1)='1' then termchar.ext_color=VAR_True
+    if substr(flag_lnib,2,1)='1' then termchar.ext_highl=VAR_True
+    termchar.width=x2d(c2x(width))
+    termchar.height=x2d(c2x(height))
+return RC_OK
