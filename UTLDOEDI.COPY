@@ -1,0 +1,16 @@
+*COPY UTLDOEDI
+/*********************************************************************/ 
+/* UTL_Do_XEDIT                                             UTLDOXED */ 
+/*********************************************************************/ 
+/* Purpose: XEDIT a file using specified profile                     */ 
+/* Input  : None                                                     */ 
+/* Output : None                                                     */ 
+/*                                                                   */ 
+/*********************************************************************/ 
+UTL_Do_XEDIT:
+    arg fileindex desired_profile
+    if desired_profile = "" then desired_profile = "PROFILE'
+    temp_filespec = file.fileindex.name file.fileindex.type file.fileindex.mode
+    'XEDIT' temp_filespec '( PROFILE' desired_profile
+    src = rc
+return src

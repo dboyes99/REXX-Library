@@ -1,0 +1,17 @@
+*COPY FILRNFI
+/*********************************************************************/ 
+/* FIL_Rename_File                                           FILRNFI */ 
+/*********************************************************************/ 
+/* Purpose: Rename a registered file                                 */ 
+/* Input  : index of former name                                     */
+/*          index of new name                                        */ 
+/* Output : renamed file                                             */ 
+/*                                                                   */ 
+/*********************************************************************/ 
+FIL_Rename_File:
+    arg oldindex newindex
+    old = file.oldindex.name file.oldindex.type file.oldindex.mode
+    new = file.newindex.name file.newindex.type file.newindex.mode
+    'RENAME' old new
+    src = rc
+return src
