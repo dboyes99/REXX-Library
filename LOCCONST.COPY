@@ -1,18 +1,21 @@
 *COPY LOCCONST
-/**********************************************************************/
-/* Declare and initialize local constants section                     */
-/* EXECLib: LOCCONST                                                  */
-/**********************************************************************/
-/* Program Specific Constants                                         */
-/**********************************************************************/
-pgm.version = 'n'                    /* edit to reflect actual VRM    */
-pgm.release = 'n'
-pgm.modlevel = 'n'
-pgm.applid = 'XXX'                   /* application id for XMITMSG    */
+/*********************************************************************/ 
+/* UTL_Local_Constants                                      LOCCONST */ 
+/*********************************************************************/ 
+/* Purpose: Define Application-local Constants                       */ 
+/* Input  : None                                                     */ 
+/* Output : None                                                     */ 
+/*                                                                   */ 
+/*********************************************************************/ *COPY LOCCONST
+UTL_Local_Constants:
+    pgm.version = 'n'               /* edit to reflect actual VRM    */
+    pgm.release = 'n'
+    pgm.modlevel = 'n'
+    pgm.applid = 'XXX'              /* application id for XMITMSG    */
 
-/* set globalv flag to false */
-FLAG_GLOBALV_init = VAR_false
+    /* set globalv flag to false */
+    FLAG_GLOBALV_init = VAR_false
 
-/* put other local constants after this line */
+    /* put other local constants after this line */
 
 return RC_OK

@@ -1,9 +1,13 @@
 *COPY LOCVARS
-/**************************************************************************/
-/* Declare and initialize local vars section                              */
-/* EXECLib: LOCVARS                                                       */
-/**************************************************************************/
-
-/* put local variable init after this line */
+/*********************************************************************/ 
+/* UTL_Local_Variables                                       LOCVARS */ 
+/*********************************************************************/ 
+/* Purpose: Define local application vars and initialize if req      */ 
+/* Input  : None                                                     */ 
+/* Output : None                                                     */ 
+/*                                                                   */ 
+/*********************************************************************/ 
+UTL_Local_Variables:
+    /* put local variable init after this line */
     
 return RC_OK

@@ -1,7 +1,12 @@
 *COPY FRCONST
-/***************************************************************************/
-/* fru_constants - set frequently used constants                           */
-/* EXECLIB Name: FRCONST                                                  */
+/*********************************************************************/ 
+/* UTL_FRU_Constants                                         FRCONST */ 
+/*********************************************************************/ 
+/* Purpose: Define frequently used constants                         */ 
+/* Input  : None                                                     */ 
+/* Output : None                                                     */ 
+/*                                                                   */ 
+/*********************************************************************/ 
 /* Input:                                                                  */
 /*   None                                                                  */
 /* Output:                                                                 */
@@ -9,12 +14,8 @@
 /***************************************************************************/
 /* ATTN: CALL THIS FIRST OR AS EARLY IN PROGRAM AS POSSIBLE           ATTN */
 /***************************************************************************/
-/* Last Modified: 30 JUL 2022                                              */
-/*    30-JUL-2022 DEB Initial commit                                       */
-/*    04-DEC-2022 DEB Add message states array for expansion of Message:   */
-/*                    functions                                            */
 /*                                                                         */
-LIB_fru_constants:
+UTL_fru_constants:
 /* frequently used return codes */
     RC_OK = 0                  /* everything OK */
     RC_WARN = 4                /* non-fatal error */
