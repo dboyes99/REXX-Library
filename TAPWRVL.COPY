@@ -1,0 +1,15 @@
+*COPY TAPWRVL
+/*********************************************************************/ 
+/* TAPE_Write_Volume_Label                                   TAPWRVL */ 
+/*********************************************************************/ 
+/* Purpose: Write a standard VOL1 label on tape mounted at address   */ 
+/* Input  : address - what address to use                            */ 
+/*          volser = what volser to write                            */
+/* Output : SL tape at address                                       */ 
+/*                                                                   */ 
+/*********************************************************************/ 
+TAPE_Write_Volume_Label:
+    arg address volser
+
+
+return rc

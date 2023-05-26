@@ -1,0 +1,10 @@
+*COPY TAPRV
+/*********************************************************************/ 
+/* TAPE_Register_Volume                                        TAPRV */ 
+/*********************************************************************/ 
+/* Purpose: Register a volume for use                                */ 
+/* Input  : tapeindex - slot for entry                               */
+/*          volser - desired volume/"SCRATCH"                        */ 
+/* Output : tape.tapeindex.volser                                    */ 
+/*                                                                   */ 
+/*********************************************************************/ 

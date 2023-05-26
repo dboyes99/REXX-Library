@@ -1,0 +1,22 @@
+*COPY UTLMTV
+/*********************************************************************/ 
+/* TAPE_Mount_Tape_Volume                                     TAPMTV */ 
+/*********************************************************************/ 
+/* Purpose: Mount a tape volume on designated drive.                 */
+/*          Attempts to discover the common TMS systems and act      */
+/*             accordingly.                                          */
+/* Input  : tapeindex - tape entry to be mounted                     */ 
+/*          address - address of tape drive (address/ANY)            */
+/*          write - writable? (Y/N/True/False)                       */
+/*          rewind - rewind to physical BOT (Y/N/True/False)         */
+/* Output : mounted tape                                             */
+/*          tape.tapeindex.mountaddr                                 */
+/*          tape.tapeindex.writeable                                 */ 
+/*                                                                   */
+/*********************************************************************/ 
+TAPE_Mount_Tape_Volume:
+    arg tapeindex address write rewind
+
+
+
+return src

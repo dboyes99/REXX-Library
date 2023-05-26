@@ -1,0 +1,10 @@
+*COPY TAPLAT
+/*********************************************************************/ 
+/* TAPE_List_Active_Tape_Drives                               TAPLAT */ 
+/*********************************************************************/ 
+/* Purpose: List active tape drives                                  */ 
+/* Input  : None                                                     */ 
+/* Output : tape.index.volser                                        */
+/*           tape.0 - # of entries                                   */ 
+/*********************************************************************/
+TAPE_List 

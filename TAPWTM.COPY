@@ -1,0 +1,14 @@
+*COPY TAPWTM
+/*********************************************************************/ 
+/* TAPE_Write_Tape_Mark                                       TAPWTM */ 
+/*********************************************************************/ 
+/* Purpose: Write a physical tape mark for mounted volume            */ 
+/* Input  : tapeindex - index entry for mounted tape                 */ 
+/*          num_marks - how many tape marks to write                 */
+/* Output : num_marks tape marks                                     */
+/*                                                                   */ 
+/*********************************************************************/
+TAPE_Write_Tape_Marks:
+    arg tapeindex num_marks
+
+return src

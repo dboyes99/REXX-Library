@@ -1,0 +1,13 @@
+*COPY TAPREW
+/*********************************************************************/ 
+/* TAPE_Rewind_Mounted_Tape                                   TAPREW */ 
+/*********************************************************************/ 
+/* Purpose: Rewind a tape volume on designated drive                 */ 
+/* Input  : address/ALL                                              */ 
+/* Output : tape rewind                                        */ 
+/*                                                                   */ 
+/*********************************************************************/ 
+TAPE_Rewind_Mounted_Tape:
+    arg address
+
+return rc

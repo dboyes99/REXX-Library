@@ -1,0 +1,14 @@
+*COPY TAPDTV
+/*********************************************************************/ 
+/* TAPE_Dismount_Tape_Volume                                  TAPDTV */ 
+/*********************************************************************/ 
+/* Purpose: Dismount a tape Volume on designated drive               */ 
+/* Input  : tapeindex/ALL                                              */ 
+/* Output : tape dismounted                                          */ 
+/*                                                                   */ 
+/*********************************************************************/ 
+TAPE_Dismount_Tape_Volume:
+    arg tapeindex
+
+
+return src

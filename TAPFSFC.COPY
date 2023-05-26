@@ -1,0 +1,15 @@
+*COPY TAPFSFC
+/*********************************************************************/ 
+/* TAPE_Move_Forward_CMS_Tape_File                           TAPFSFC */ 
+/*********************************************************************/ 
+/* Purpose: Move forward n files on tape (CMS)                       */ 
+/* Input  : tapeindex - which volume                                 */
+/*          numfiles = how many files to advance                     */ 
+/* Output :                                                          */
+/*                                                                   */ 
+/*********************************************************************/
+TAPE_Move_Forward_CMS_Tape_File:
+    arg tapeindex numfiles
+
+
+return src

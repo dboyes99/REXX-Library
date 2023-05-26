@@ -1,0 +1,15 @@
+*COPY UTLW4T
+/*********************************************************************/ 
+/* TAPE_Wait_For_Tape_Mount                                   TAPW4T */ 
+/*********************************************************************/ 
+/* Purpose: Pause execution to wait for tape mpunt                   */ 
+/* Input  : None                                                     */ 
+/* Output : Tape mounted                                             */ 
+/*                                                                   */ 
+/*********************************************************************/
+TAPE_Wait_For_Tape_Mount:
+
+
+
+
+return src
