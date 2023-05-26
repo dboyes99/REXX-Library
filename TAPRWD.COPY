@@ -8,6 +8,6 @@
 /*                                                                   */ 
 /*********************************************************************/ 
 TAPE_Rewind_Mounted_Tape:
-    arg address
+    arg tapeindex
 
 return rc

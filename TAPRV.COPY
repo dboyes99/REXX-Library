@@ -8,3 +8,7 @@
 /* Output : tape.tapeindex.volser                                    */ 
 /*                                                                   */ 
 /*********************************************************************/ 
+TAPE_Register_Volume:
+    arg tapeindex volser
+
+return src
