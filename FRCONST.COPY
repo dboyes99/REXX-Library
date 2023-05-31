@@ -31,6 +31,11 @@ UTL_fru_constants:
     RC_OTHERERR = 999          /* some other unexplained error happened */
     RC_PARSEERR = 24           /* failed to parse */
 
+    /* return codes from VMFPPF utility */
+    RC_INTERR = 12             /* internal error */
+    RC_MISSINGREQFILE = 28     /* missing required file */
+    RC_EXTERR = 100            /* external error */
+
 
 /* frequently used constants */
     VAL_CHAR_NULL = ''         /* null string */
