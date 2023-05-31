@@ -1,0 +1,26 @@
+*COPY UTLDDHLP
+/*********************************************************************/ 
+/* UTL_Display_Detailed_Help                                UTLDDHLP */ 
+/*********************************************************************/ 
+/* Purpose: Display detailed help file                               */ 
+/* Input  : help_component                                           */ 
+/*          desired_helpfile                                         */
+/* Output : None                                                     */ 
+/*                                                                   */ 
+/*********************************************************************/
+UTL_Display_Detailed_Help:
+    arg help_component desired_helpfile
+    if help_component = '' then do
+        help_component = 'CMS'
+    end
+    'EXEC HELP' help_component desired_helpfile
+    src = rc
+    select 
+        when src = RC_OK then do
+            rc = RC_OK
+        end
+        when src = RC_NOTFOUND then do
+            rc = RC_NOTFOUND
+        end
+        otherwise do
+            

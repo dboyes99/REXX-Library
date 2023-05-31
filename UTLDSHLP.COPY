@@ -1,9 +1,14 @@
-*COPY filename
+*COPY UTLDHLP
 /*********************************************************************/ 
-/* <routine>                   <date>                      filename> */ 
+/* UTL_Display_Summary_Help                                 UTLDSHLP */ 
 /*********************************************************************/ 
-/* Purpose: <purpose>    */ 
+/* Purpose: Display short summary help                               */ 
 /* Input  : None                                                     */ 
 /* Output : None                                                     */ 
 /*                                                                   */ 
-/*********************************************************************/ 
+/*********************************************************************/
+UTL_Display_Summary_Help:
+
+    /* summary help goes here */
+
+return rc

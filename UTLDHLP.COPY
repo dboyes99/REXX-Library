@@ -1,0 +1,32 @@
+*COPY filename
+/*********************************************************************/ 
+/* UTL_Display_Preferred_Help                                UTLDHLP */ 
+/*********************************************************************/ 
+/* Purpose: Display preferred type of help                           */ 
+/* Input  : None                                                     */ 
+/* Output : None                                                     */ 
+/*                                                                   */ 
+/*********************************************************************/ 
+UTL_Display_Preferred_Help:
+    arg help_component desired_helpfile
+    'PIPE CMS DEFAULTS LIST HELP' ,
+        '| DROP 2' ,
+        '| STEM help.'
+    x = strip(help.1) /* this is the interesting line */
+    if pos('DETAIL',help.1) > 0 then preference = 'DETAIL' ,
+        else preference = 'BRIEF'
+    upper preference
+    select
+        when preference = 'BRIEF' then do
+            call UTL_Display_Summary_Help help_component desired_helpfile
+            src = rc
+        end
+        when preference = 'DETAIL' then do
+            call UTL_Display_Detailed_Help help_component desired_helpfile
+            src = rc
+        otherwise do /* default actiom is detail help */
+            call UTL_Display_Detailed_Help help_component desired_helpfile
+            src=rc
+        end
+    end
+return src

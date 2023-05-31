@@ -64,4 +64,34 @@ UTL_fru_constants:
  /* capability options */
     have_SUPERSAY = VAL_true    /* capability present -- set to false if not */
 
+/* interrogate for available TMS */
+    Available_TMS = 'NONE' /* default to no TMS installed */
+    call UTL_Silence_Output
+    /* test for VMTAPE */
+        'LISTFILE VMTAPE MODULE *'
+        vmtape_src = rc
+    /* IBM tape manager */
+        'LISTFILE TAPEMNT * *'
+        ibmtm_src = rc
+    /* DFSMSRMM */
+        'LISTFILE TAPCMD * *'
+        dfsmsrmm_src = rc
+    /* VTAPE */
+        'LISTFILE VTMOUNT * * */
+        vtape_src = rc
+    call UTL_Resume_Output
+    multiple_tms = vmtape_src + ibm_tm + dfsmsrmm_src + vtape_src
+    if multiple_tms >= RC_NOTFOUND then do
+        call UTL_Display_Message_With_Subs "101" ""
+    end
+    select
+        when vmtape_src = RC_OK then Available_TMS = 'VMTAPE'
+        when ibmtn_src = RC_OK then Available_TMS = 'IBMTM'
+        when dfsmsrmm_src = RC_OK then Available_TMS = 'DFSMSRMM'
+        when vtape_src = RC_OK then Available_TMS ='VTAPE'
+        otherwise do
+            nop /* assume no TMS */
+        end
+    end
+
 return RC_OK                    /* This routine is always successful */
