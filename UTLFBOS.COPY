@@ -1,0 +1,17 @@
+*COPY UTLFBOS
+/*********************************************************************/ 
+/* UTL_Find_Beginning_Of_Options                             UTLFBOS */ 
+/*********************************************************************/ 
+/* Purpose: Find beginning of options token in token.x               */ 
+/* Input  : tokenized command line in token.x                        */ 
+/* Output : number of token containing left paren                    */ 
+/*                                                                   */ 
+/*********************************************************************/ 
+UTL_Find_Beginning_Of_Options:
+    do x=1 to token.0
+        if token.x = '(' then do
+            VAL_OPTSTART = x 
+            leave
+        end /* if token.x = '(' */
+    end /* do x */
+return rc

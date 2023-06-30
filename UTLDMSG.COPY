@@ -1,5 +1,6 @@
+*COPY UTLDMSG
 /***********************************************************************/ 
-/* UTL_Display_Msg_With_Subs:        2023-02-20              UTLRMWS   */ 
+/* UTL_Display_Msg_With_Subs:        2023-02-20              UTLDMSG   */ 
 /***********************************************************************/ 
 /* Purpose: Display Message with Substitution                          */ 
 /* Input  : message number and Substitution var names                  */ 

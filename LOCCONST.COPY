@@ -15,6 +15,8 @@ UTL_Local_Constants:
 
     /* set globalv flag to false */
     FLAG_GLOBALV_init = VAR_false
+    /* set token number of '(' options marker */)
+    VAL_OPTSTART = VAR_NULL
 
     /* put other local constants after this line */
 
