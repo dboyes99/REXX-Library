@@ -1,0 +1,16 @@
+*COPY FILWRFL
+/*********************************************************************/ 
+/* FIL_Write_File_Line                                       FILWRFL */ 
+/*********************************************************************/ 
+/* Purpose: Write a line to file at position position                */ 
+/* Input  : line - line to be written                                */ 
+/*          file - full filespec of file to write                    */
+/*          pos  - position to write line                            */
+/*                 'APPEND' - write to end of file                   */
+/*                 num - overwrite record 'num'                      */
+/*                 <blank> - write to next line                      */
+/* Output : RC_OK if everything worked                               */
+/*          RC_NOTFOUND if file not found                            */
+/*          RC_OTHERERR if something else happened                   */
+/*                                                                   */ 
+/*********************************************************************/ 
